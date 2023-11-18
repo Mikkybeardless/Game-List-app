@@ -4,8 +4,8 @@ function TrendingGames({ trendingGames }) {
   useEffect(() => {}, []);
   return (
     <div className='mt-5 hidden md:block'>
-      <h2 className='text-[30px] dark:text-white'>Trending Games</h2>
-      <div className='md:grid md:grid-cols-3 lg:grid grid-cols-4 gap-4 mt-5'>
+      <h2 className='text-[30px] dark:text-white font-bold'>Trending Games</h2>
+      <div className=' grid md:grid-cols-3 lg:grid-cols-4   gap-4 mt-5'>
         {trendingGames.map(
           (item, index) =>
             index < 4 && (
