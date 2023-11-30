@@ -2,23 +2,30 @@ import { useContext, useEffect, useState } from "react";
 import logo from "../assets/images/logo.png";
 import { HiMagnifyingGlass, HiMoon, HiOutlineSun } from "react-icons/hi2";
 import { ThemeContext } from "./context/ThemeContext";
-function Header() {
-  const { theme, setTheme } = useContext(ThemeContext);
 
-  useEffect(() => {
-    console.log("Theme", theme);
-  }, []);
+function Header({ onSearch }) {
+  const { theme, setTheme } = useContext(ThemeContext);
+  const [searchName, setSearchName] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(searchName);
+  };
 
   return (
     <div className='flex items-center px-5'>
       <img src={logo} width={60} height={60} alt='logo' />
       <div className='flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full '>
         <HiMagnifyingGlass />
-        <input
-          type='text'
-          placeholder='Search Games'
-          className=' px-2 bg-transparent outline-none '
-        />
+        <form onSubmit={handleSubmit} action=''>
+          <input
+            type='text'
+            placeholder='Search Games'
+            onChange={(e) => setSearchName(e.target.value)}
+            value={searchName}
+            className=' px-2 bg-transparent outline-none '
+          />
+        </form>
       </div>
       <div>
         {theme == "light" ? (

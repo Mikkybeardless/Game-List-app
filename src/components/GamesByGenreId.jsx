@@ -13,7 +13,7 @@ function GamesByGenreId({ gameById, selectedName }) {
             index < 6 && (
               <div
                 key={item.id}
-                className=' bg-[#76a8f75e] h-full pb-12 p-2 rounded-lg group hover:scale-110 cursor-pointer transition-all duration-300 ease-in-out'
+                className=' bg-[#76a8f75e] h-[500px] pb-20 p-2 rounded-lg group hover:scale-110 cursor-pointer transition-all duration-300 ease-in-out'
               >
                 <img
                   src={item.background_image}
@@ -25,10 +25,13 @@ function GamesByGenreId({ gameById, selectedName }) {
                     {item.metacritic}
                   </span>
                 </h2>
-                <h2 className='dark:text-gray-300 text-gray-500'>
+                <h2 className='dark:text-gray-300 ml-2 text-gray-500'>
                   ⭐{item.rating} 💭{item.reviews_count} 🔥
                   {item.suggestions_count}
                 </h2>
+                <h3 className='dark:text-white p-3 text-[15px]'>
+                  Release Date: {item.released}
+                </h3>
               </div>
             )
         )}

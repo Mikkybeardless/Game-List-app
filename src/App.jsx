@@ -17,7 +17,6 @@ function App() {
           theme == "dark" && "bg-[#121212] "
         } min-h-[100vh]`}
       >
-        <Header />
         <Home />
       </div>
     </ThemeContext.Provider>
