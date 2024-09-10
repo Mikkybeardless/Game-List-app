@@ -1,7 +1,7 @@
 # Game List App
 
 ## Description
-This front-end website is built with `React` `tailwind CSS` and an open-source game API. The website allows you to discover various games ranging from action to puzzle games
+This front-end website is built with `React` `tailwind CSS` and RAWG video game API. The website allows you to discover various games ranging from action to puzzle games.
 
 
 
