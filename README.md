@@ -1,4 +1,11 @@
-# React + Vite
+# Game List App
+
+## Description
+This front-end website is built with `React` `tailwind CSS` and RAWG video game API. The website allows you to discover various games ranging from action to puzzle games. It also displays details of available games from the api.
+
+
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
