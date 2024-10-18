@@ -14,8 +14,8 @@ function Header({ onSearch }) {
 
   return (
     <div className='flex items-center px-5'>
-      <img src={logo} width={60} height={60} alt='logo' />
-      <div className='flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full '>
+      <img className=" hidden md:block" src={logo} width={60} height={60} alt='logo' />
+      <div className='flex bg-slate-200 p-1 my-3 md:p-2 w-full items-center mx-5 rounded-full '>
         <HiMagnifyingGlass />
         <form onSubmit={handleSubmit} action=''>
           <input
@@ -23,14 +23,14 @@ function Header({ onSearch }) {
             placeholder='Search Games'
             onChange={(e) => setSearchName(e.target.value)}
             value={searchName}
-            className=' px-2 bg-transparent outline-none '
+            className=' md:px-2 bg-transparent outline-none '
           />
         </form>
       </div>
       <div>
         {theme == "light" ? (
           <HiMoon
-            className='bg-slate-200 text-[35px] rounded-full text-black p- cursor-pointer '
+            className='bg-slate-200 text-[25px] md:text-[35px] rounded-full text-black p- cursor-pointer '
             onClick={() => {
               setTheme("dark");
               localStorage.setItem("theme", "dark");
@@ -38,7 +38,7 @@ function Header({ onSearch }) {
           />
         ) : (
           <HiOutlineSun
-            className='bg-slate-200 text-[35px] rounded-full text-black p-1 cursor-pointer'
+            className='bg-slate-200 text-[25px] md:text-[35px] rounded-full text-black p-1 cursor-pointer'
             onClick={() => {
               setTheme("light");
               localStorage.setItem("theme", "light");

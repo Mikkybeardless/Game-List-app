@@ -1,10 +1,10 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Banner from "../components/Banner";
 import GamesByGenreId from "../components/GamesByGenreId";
 import GenreList from "../components/GenreList";
 import TrendingGames from "../components/TrendingGames";
 import GlobalApi from "../Services/GlobalApi";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Header from "../components/Header";
 
 function Home() {
@@ -59,14 +59,14 @@ function Home() {
   return (
     <div>
       <Header onSearch={getSearchedGame} />
-      <div className='grid grid-cols-4 px-5'>
-        <div className='h-full hidden md:block '>
+      <div className="grid gap-1 md:gap-0 grid-cols-2 md:grid-cols-4 px-5">
+        <div className="md:h-full col-span-1  left-0 z-20 md:block ">
           <GenreList
             genresId={(genresId) => gamesByGenresId(genresId)}
             selectGenresName={(name) => setSelectedName(name)}
           />
         </div>
-        <div className=' col-span-4 md:col-span-3  h-full '>
+        <div className=" col-span-1 md:col-span-3 ml-auto  h-full ">
           {allGameList.length > 0 && genresIdGames.length > 0 && (
             <div>
               <Banner gameBanner={allGameList[0]} />

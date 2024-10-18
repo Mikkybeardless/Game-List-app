@@ -16,7 +16,7 @@ function GenreList({ genresId, selectGenresName }) {
   };
 
   return (
-    <div>
+    <div className="">
       <h2 className='text-[30px] font-bold dark:text-white '>Genre </h2>
       {genreList.map((item, index) => (
         <div
@@ -25,7 +25,7 @@ function GenreList({ genresId, selectGenresName }) {
             genresId(item.id);
             selectGenresName(item.name);
           }}
-          className={`flex gap-2 items-center mb-2 hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600
+          className={`flex gap-3 pb-4 md:pb-0 md:gap-2 items-center mb-2 hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600
           cursor-pointer group ${
             activeIndex == index && `bg-gray-300 dark:bg-gray-600`
           } `}
@@ -33,7 +33,7 @@ function GenreList({ genresId, selectGenresName }) {
         >
           <img
             src={item.image_background}
-            className={`w-[40px] h-[40px] object-cover rounded-lg group-hover:scale-105 transition-all ease-out duration-300 ${
+            className={` w-[60px] md:w-[40px] h-[60px] md:h-[40px] object-cover rounded-lg group-hover:scale-105 transition-all ease-out duration-300 ${
               activeIndex == index && `scale-105`
             } `}
             alt=''
